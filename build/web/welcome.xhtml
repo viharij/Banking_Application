@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Login OK</title>
+    </head>
+    <h:body>
+        <h:form>
+            <h3>Welcome to online Brokerage account </h3>
+            <h:outputLabel value="#{login.id}"></h:outputLabel>
+           
+            <h:commandLink value="Display order" action="#{login.theLoginAccount.displayorder(login)}">
+                    
+                </h:commandLink> 
+                &nbsp;
+            
+            <h:selectOneRadio value="#{login.theLoginAccount.order}">
+                <f:selectItem itemValue="buy" itemLabel="Buy" />
+                <f:selectItem itemValue="sell" itemLabel="Sell" />
+            </h:selectOneRadio>   
+            
+            <h:selectOneRadio value="#{login.theLoginAccount.LM}">
+                <f:selectItem itemValue="limit" itemLabel="limit" />
+                <f:selectItem itemValue="market" itemLabel="market" />
+            </h:selectOneRadio>  
+            
+             <p>Please enter Company:<br></br>
+                <h:inputText id="company" required ="true" 
+                             requiredMessage="The company field cannot be empty"
+                             title="Please enter your Comapany Name"
+                             value="#{login.theLoginAccount.symbol}"
+                             validatorMessage="Please use correct format">
+                    
+                </h:inputText>
+            </p>
+            
+            
+             <p>Please enter Shares<br></br>
+                <h:inputText id="share" required ="true" 
+                             requiredMessage="The share field cannot be empty"
+                             title="Please enter number of shares"
+                             value="#{login.theLoginAccount.shares}"
+                             validatorMessage="Please use correct format">
+                    
+                </h:inputText>
+            </p>
+              <p>Please enter price <br></br>
+                <h:inputText id="price" required ="true" 
+                             requiredMessage="The Price field cannot be empty"
+                             title="Please enter your Price"
+                             value="#{login.theLoginAccount.price}"
+                             validatorMessage="Please use correct format">
+                    
+                </h:inputText>
+            </p>
+            
+
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{login.theLoginAccount.getTradeDetails()}"/>
+            </p>
+        </h:form>
+       
+         
+        
+    </h:body>
+</html>

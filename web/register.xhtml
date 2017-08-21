@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Register an Brokerage Account</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <h3>Create a new online Brokerage account!</h3>
+
+            <p>Please enter your Social Security Number:<br></br>
+                <h:inputText id="ssn" required ="true" 
+                             requiredMessage="The SSN field cannot be empty"
+                             title="Please enter your Social Security Number"
+                             value="#{registration.ssn}"
+                             validatorMessage="Pleause use a correct format 
+                             for your social security number">
+                    <f:validateLength maximum="5" minimum="5" />
+                </h:inputText>
+            </p>
+
+            <p>Please enter your new online ID:<br></br>
+                <h:inputText id="id" required ="true" 
+                             requiredMessage="The ID field cannot be empty"
+                             title="Please enter your ID"
+                             value="#{registration.login}"
+                             validatorMessage="The length of your selected 
+                             ID must be between 3 and 20.">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+
+            <p>Please enter your selected password:<br></br>
+                <h:inputText id="password" required ="true" 
+                             requiredMessage="The password field cannot be empty"
+                             title="Please enter your password"
+                             value="#{registration.password}"
+                             validatorMessage="The length of your 
+                             password must be between 3 and 20.">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+
+            <p>Please enter your Balance<br></br>
+                <h:inputText id="Balance" required ="true" 
+                             requiredMessage="The balance field cannot be empty"
+                             title="Please enter your Balance"
+                             value="#{registration.balance}">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+
+            <p>Please enter your Name:<br></br>
+                <h:inputText id="Name" required ="true" 
+                             requiredMessage="The Name field cannot be empty"
+                             title="Please enter your Name"
+                             value="#{registration.name}">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+
+
+            <p>Please select a Security Question1<br></br>
+                <h:selectOneMenu value="#{registration.securityquestion1}">
+                    <f:selectItem itemValue="Best Friend Name" itemLabel="What is your best friend name" />
+                    <f:selectItem itemValue="Favourite color" itemLabel="What is your favourite color" />
+                    <f:selectItem itemValue="Mother Maiden Name" itemLabel="What is Mother Maiden Name" />
+                    <f:selectItem itemValue="Favourite Place" itemLabel="What is your favourite place" />
+
+                </h:selectOneMenu>
+            </p>  
+            <p>Please enter answer1:<br></br>
+                <h:inputText id="Answer1" required ="true" 
+                             requiredMessage="The Answer1 field cannot be empty"
+                             title="Please enter your Answer"
+                             value="#{registration.answer1}">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+
+
+            <p>Please select a Security Question2<br></br>
+                <h:selectOneMenu value="#{registration.securityquestion2}">
+                    <f:selectItem itemValue="Best Friend Name" itemLabel="What is your best friend name" />
+                    <f:selectItem itemValue="Favourite color" itemLabel="What is your favourite color" />
+                    <f:selectItem itemValue="Mother Maiden Name" itemLabel="What is Mother Maiden Name" />
+                    <f:selectItem itemValue="Favourite Place" itemLabel="What is your favourite place" />
+
+                </h:selectOneMenu>
+            </p>  
+            <p>Please enter answer2:<br></br>
+                <h:inputText id="Answer2" required ="true" 
+                             requiredMessage="The Answer1 field cannot be empty"
+                             title="Please enter your Answer"
+                             value="#{registration.answer2}">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="RegistrationSucess.xhtml" />
+            </p>
+
+        </h:form>
+
+    </h:body>
+</html>

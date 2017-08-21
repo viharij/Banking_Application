@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+         <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+        <h:form>
+            <h3>Login your online Brokerage account</h3>
+            <p>
+                Please enter your online access ID:<br></br>
+                <h:inputText id="id" value="#{login.id}"/>
+            </p>
+            
+            <p>
+                Please enter your password:<br></br>
+                <h:inputText id="psw" value="#{login.password}"/>
+            </p>
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{login.login()}"/>
+            </p>
+        </h:form>
+       
+         
+        
+    </h:body>
+</html>
